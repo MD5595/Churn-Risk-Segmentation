@@ -73,7 +73,7 @@ ax = churned["churn_category"].value_counts().plot(kind="barh", figsize=(7, 4), 
 ax.set_xlabel("Number of churned customers")
 ax.set_title("Churn Category breakdown")
 plt.tight_layout()
-plt.savefig("Visuals/churn_category_breakdown.png", dpi=100)
+plt.savefig("../Visuals/churn_category_breakdown.png", dpi=100)
 plt.close()
 
 

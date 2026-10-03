@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
 
-df = pd.read_csv("churn.csv")
+df = pd.read_csv("../churn.csv")
 
 df["tenure_band"] = pd.cut(
     df["Tenure in Months"],
@@ -23,7 +23,7 @@ df["churn_flag"] = (df["Customer Status"] == "Churned").astype(int)
 
 print(df.columns.tolist())
 print(df[["tenure_band", "age_band", "addon_count", "churn_flag"]].head())
-conn = sqlite3.connect("churn.db")
+conn = sqlite3.connect("../churn.db")
 df.to_sql("customers_clean", conn, if_exists="replace", index=False)
 conn.close()
 

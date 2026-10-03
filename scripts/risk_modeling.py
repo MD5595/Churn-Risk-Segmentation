@@ -85,7 +85,7 @@ plt.ylabel("True Positive Rate")
 plt.title("ROC Curve - Churn Model")
 plt.legend()
 plt.tight_layout()
-plt.savefig("Visuals/roc_curve.png", dpi=100)
+plt.savefig("../Visuals/roc_curve.png", dpi=100)
 plt.close()
 
 coef_df = pd.DataFrame({
@@ -102,7 +102,7 @@ plt.barh(coef_df["feature"], coef_df["coefficient"], color="steelblue")
 plt.xlabel("Coefficient (impact on churn log-odds)")
 plt.title("Feature Importance")
 plt.tight_layout()
-plt.savefig("Visuals/feature_importance.png", dpi=100)
+plt.savefig("../Visuals/feature_importance.png", dpi=100)
 plt.close()
 
 

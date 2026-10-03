@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
 
-df = pd.read_csv("churn.csv")
+df = pd.read_csv("../churn.csv")
 
 
 print("=== NULLS ===")
@@ -45,7 +45,7 @@ bad_age = ~df["Age"].between(0, 110)
 print(f"Out-of-range Age: {bad_age.sum()}")
 
 
-conn = sqlite3.connect("churn.db")
+conn = sqlite3.connect("../churn.db")
 df.to_sql("customers_clean", conn, if_exists="replace", index=False)
 
 check = pd.read_sql("SELECT COUNT(*) AS n FROM customers_clean", conn)
